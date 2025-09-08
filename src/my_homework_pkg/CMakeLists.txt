@@ -20,7 +20,8 @@ find_package(std_msgs REQUIRED)        # gebruik maken von standaard messages
 
 ## 1 new line name of executalbe use the program name !
 add_executable(template_general src/template_general.cpp) 
-# add_executable(template_walltimer src/template_walltimer.cpp) 
+add_executable(homework_lect_2_1 src/homework_lect_2_1.cpp) 
+add_executable(homework_lect_2_2 src/homework_lect_2_2.cpp) 
 # add_executable(template_publisher src/template_publisher.cpp) 
 # add_executable(template_subscriber src/template_subscriber.cpp) 
 # add_executable(template_serviceserver src/template_serviceserver.cpp) 
@@ -31,6 +32,8 @@ add_executable(template_general src/template_general.cpp)
 
 ## 2 new line meaning that this program needs rclcpp
 ament_target_dependencies(template_general rclcpp  )
+ament_target_dependencies(homework_lect_2_1 rclcpp  )
+ament_target_dependencies(homework_lect_2_2 rclcpp  )
 # ament_target_dependencies(template_walltimer rclcpp  ) 
 # ament_target_dependencies(template_publisher rclcpp std_msgs) 
 # ament_target_dependencies(template_subscriber rclcpp std_msgs) 
@@ -42,6 +45,8 @@ ament_target_dependencies(template_general rclcpp  )
 # ## new 3 get 
 install (TARGETS
 	  template_general
+    homework_lect_2_1
+    homework_lect_2_2
           # template_walltimer
           # template_publisher
           # template_subscriber
