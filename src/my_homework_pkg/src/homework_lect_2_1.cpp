@@ -14,8 +14,7 @@ then prints the current system time and the elapsed time.
 class ClockNode : public rclcpp::Node
 {
 public:
-    ClockNode()
-    : Node("clock_node")
+    ClockNode(): Node("clock_node")
     {
         // Total sleep duration: 20 seconds + 88,778,567 nanoseconds
         const int64_t total_nanoseconds = 20LL * 1000000000LL + 88778567LL;
