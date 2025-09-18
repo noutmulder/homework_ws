@@ -13,10 +13,8 @@ find_package(ament_cmake REQUIRED)
 
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_action REQUIRED)   # nodig als er een actionserver node wordt gemaakt 
-
 find_package(std_msgs REQUIRED)        # gebruik maken von standaard messages
-# find_package(templates_interfaces REQUIRED)   # gebruik maken van project messages 
-
+find_package(my_homework_interfaces REQUIRED)
 
 ## 1 new line name of executalbe use the program name !
 add_executable(template_general src/template_general.cpp) 
@@ -24,6 +22,7 @@ add_executable(homework_lect_2_1 src/homework_lect_2_1.cpp)
 add_executable(homework_lect_2_2 src/homework_lect_2_2.cpp) 
 add_executable(homework_lect_3_1 src/homework_lect_3_1.cpp) 
 add_executable(homework_lect_3_2 src/homework_lect_3_2.cpp) 
+add_executable(homework_lect_5 src/homework_lect_5.cpp) 
 # add_executable(template_publisher src/template_publisher.cpp) 
 # add_executable(template_subscriber src/template_subscriber.cpp) 
 # add_executable(template_serviceserver src/template_serviceserver.cpp) 
@@ -36,9 +35,10 @@ add_executable(homework_lect_3_2 src/homework_lect_3_2.cpp)
 ament_target_dependencies(template_general rclcpp  )
 ament_target_dependencies(homework_lect_2_1 rclcpp  )
 ament_target_dependencies(homework_lect_2_2 rclcpp  )
-ament_target_dependencies(homework_lect_2_2 rclcpp  )
 ament_target_dependencies(homework_lect_3_1 rclcpp std_msgs )
 ament_target_dependencies(homework_lect_3_2 rclcpp std_msgs )
+ament_target_dependencies(homework_lect_5 rclcpp my_homework_interfaces)
+
 
 # ament_target_dependencies(template_walltimer rclcpp  ) 
 # ament_target_dependencies(template_publisher rclcpp std_msgs) 
@@ -55,6 +55,7 @@ install (TARGETS
     homework_lect_2_2
     homework_lect_3_1
     homework_lect_3_2
+    homework_lect_5
           # template_walltimer
           # template_publisher
           # template_subscriber
@@ -62,7 +63,7 @@ install (TARGETS
           # template_serviceclient
           # template_actionserver
           # template_actionclient
-          DESTINATION lib/${PROJECT_NAME}
+    DESTINATION lib/${PROJECT_NAME}
           )
 
 
